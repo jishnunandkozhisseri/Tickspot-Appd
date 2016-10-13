@@ -1,4 +1,10 @@
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from django import forms
 
-class EmailForms(forms.Form):
-	content_data = forms.CharField(label=("data"), required=True,widget=forms.Textarea(attrs={'class': 'form-control', 'id': 'data','rows': 3,}))
+CHOICES=[('8','8'),
+         ('4','4')]
+
+
+class SomeForm(forms.Form):
+    foo = forms.CharField(widget=SummernoteWidget())  # instead of forms.Textarea
+    time = forms.ChoiceField(choices=CHOICES, widget=forms.RadioSelect())

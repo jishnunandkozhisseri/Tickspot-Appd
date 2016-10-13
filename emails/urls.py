@@ -6,6 +6,6 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^landing/', 'emails.views.email_template_page'),
-    url(r'^send/', 'emails.views.sendmail')
+    url(r'^summernote/', include('django_summernote.urls')),
 
 )

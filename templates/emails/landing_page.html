@@ -6,7 +6,7 @@
 	<body>
 		<form action="/emails/landing/" method="post">
 			{% csrf_token %}
-			{{form.content_data}}
+			{{form|safe}}
 			<button type="submit">send</button>
 		</form>
 	</body>
